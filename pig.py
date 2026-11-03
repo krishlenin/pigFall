@@ -3,10 +3,10 @@ import random
 def roll():
     return random.randint(1,6)
 
-def pigTurn(target = 20):
+def pigTurn(target = 20, score = 0):
     turnTotal = 0
     rolledOne = False
-    while turnTotal < target and not rolledONe:
+    while turnTotal < target and turnTotal + score < 100 and not rolledOne:
         dice = roll()
         print("Roll:", dice)
         if dice == 1:
@@ -15,6 +15,12 @@ def pigTurn(target = 20):
         else:
             turnTotal += dice
     return turnTotal
+
+def part4Test(score):
+    for _ in range(3): 
+        score = score + pigTurn(20, score)
+        print("Score: " score)
+        print()
 
 def holdAtX(trials, target = 20):
     results = {0:0}
