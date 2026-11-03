@@ -22,12 +22,21 @@ def part4Test(score):
         print("Score: " score)
         print()
 
-def solitaire()
-    score = 0 
+def solitaire(target = 20)
+    score = 0
+    turns = 0
     while score < 100:
         score = score + pigTurn(20, score)
+        turns += 1
         print("Score: " score)
         print()
+        return turns
+
+def avgTurns(trials, target = 20):
+    totalTurns = 0
+    for _ in range(trials):
+        totalTurns += solitaire(target)
+    print(totalTurns / trials)
 
 def holdAtX(trials, target = 20):
     results = {0:0}
