@@ -22,6 +22,13 @@ def part4Test(score):
         print("Score: " score)
         print()
 
+def solitaire()
+    score = 0 
+    while score < 100:
+        score = score + pigTurn(20, score)
+        print("Score: " score)
+        print()
+
 def holdAtX(trials, target = 20):
     results = {0:0}
     for i in range(6):
